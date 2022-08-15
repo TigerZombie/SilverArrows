@@ -52,7 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				246E108B28AAC27200D3E9CA /* SilverArrowsApp.swift */,
-				246E108D28AAC27200D3E9CA /* ContentView.swift */,
+				246E109928AAC50E00D3E9CA /* Views */,
+				246E109B28AAC51F00D3E9CA /* ViewModels */,
+				246E109A28AAC51800D3E9CA /* Models */,
 				246E108F28AAC27300D3E9CA /* Assets.xcassets */,
 				246E109128AAC27300D3E9CA /* Preview Content */,
 			);
@@ -65,6 +67,28 @@
 				246E109228AAC27300D3E9CA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		246E109928AAC50E00D3E9CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				246E108D28AAC27200D3E9CA /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		246E109A28AAC51800D3E9CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		246E109B28AAC51F00D3E9CA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
