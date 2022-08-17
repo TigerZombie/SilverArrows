@@ -1,8 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "2021.jpeg",
-      "idiom" : "universal"
+      "filename" : "2021 F1 W12 E Performance.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

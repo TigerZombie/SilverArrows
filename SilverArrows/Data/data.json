@@ -1,0 +1,135 @@
+[
+
+{
+"id": 0,
+"image":"",  
+"name":"MGP W01",
+"season":"2010",
+"drivers": ["Nico Rosberg", "Michael Schumacher"],
+"championshipPoints":"214",
+"teamChampionship":"false",
+"driverChampionship":["false":""]
+},
+
+{
+"id": 1,
+"image":"",  
+"name":"MGP W02",
+"season":"2011",
+"drivers": ["Nico Rosberg", "Michael Schumacher"],
+"championshipPoints":"165",
+"teamChampionship":"false",
+"driverChampionship":["false":""]
+},
+
+{
+"id": 2,
+"image":"",  
+"name":"F1 W03",
+"season":"2012",
+"drivers": ["Nico Rosberg", "Michael Schumacher"],
+"championshipPoints":"142",
+"teamChampionship":"false",
+"driverChampionship":["false":""]
+},
+
+{
+"id": 3,
+"image":"",  
+"name":"F1 W04",
+"season":"2013",
+"drivers": ["Nico Rosberg", "Lewis Hamilton"],
+"championshipPoints":"360",
+"teamChampionship":"false",
+"driverChampionship":["false":""]
+},
+
+{
+"id": 4,
+"image":"",  
+"name":"F1 W05 Hybrid",
+"season":"2014",
+"drivers": ["Nico Rosberg", "Lewis Hamilton"],
+"championshipPoints":"701",
+"teamChampionship":"true",
+"driverChampionship":["true":"Lewis Hamilton"]
+},
+
+{
+"id": 5,
+"image":"",  
+"name":"F1 W06 Hybrid",
+"season":"2015",
+"drivers": ["Nico Rosberg", "Lewis Hamilton"],
+"championshipPoints":"703",
+"teamChampionship":"true",
+"driverChampionship":["true":"Lewis Hamilton"]
+},
+
+{
+"id": 6,
+"image":"",  
+"name":"F1 W07 Hybrid",
+"season":"2016",
+"drivers": ["Nico Rosberg", "Lewis Hamilton"],
+"championshipPoints":"765",
+"teamChampionship":"true",
+"driverChampionship":["true":"Nico Rosberg"]
+},
+
+{
+"id": 7,
+"image":"",  
+"name":"F1 W08 EQ Power+",
+"season":"2017",
+"drivers": ["Lewis Hamilton", "Valtteri Bottas"],
+"championshipPoints":"668",
+"teamChampionship":"true",
+"driverChampionship":["true":"Lewis Hamilton"]
+},
+
+{
+"id": 8,
+"image":"",  
+"name":"F1 W09 EQ Power+",
+"season":"2018",
+"drivers": ["Lewis Hamilton", "Valtteri Bottas"],
+"championshipPoints":"655",
+"teamChampionship":"true",
+"driverChampionship":["true":"Lewis Hamilton"]
+},
+
+{
+"id": 9,
+"image":"",  
+"name":"F1 W10 EQ Power+",
+"season":"2019",
+"drivers": ["Lewis Hamilton", "Valtteri Bottas"],
+"championshipPoints":"739",
+"teamChampionship":"true",
+"driverChampionship":["true":"Lewis Hamilton"]
+},
+
+{
+"id": 10,
+"image":"",  
+"name":"F1 W11 EQ Performance",
+"season":"2020",
+"drivers": ["Lewis Hamilton", "Valtteri Bottas"],
+"championshipPoints":"573",
+"teamChampionship":"true",
+"driverChampionship":["true":"Lewis Hamilton"]
+},
+
+{
+"id": 11,
+"image":"",  
+"name":"F1 W12 E Performance",
+"season":"2021",
+"drivers": ["Lewis Hamilton", "Valtteri Bottas"],
+"championshipPoints":"613,5",
+"teamChampionship":"true",
+"driverChampionship":["false":""]
+}
+
+]
