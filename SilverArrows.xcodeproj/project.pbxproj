@@ -13,6 +13,7 @@
 		246E109028AAC27300D3E9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246E108F28AAC27300D3E9CA /* Assets.xcassets */; };
 		246E109328AAC27300D3E9CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246E109228AAC27300D3E9CA /* Preview Assets.xcassets */; };
 		24D795DB28AD7499006D40F6 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D795DA28AD7499006D40F6 /* Season.swift */; };
+		24FF652228AD882B00DC0A49 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF652128AD882B00DC0A49 /* DataService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		246E108F28AAC27300D3E9CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		246E109228AAC27300D3E9CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		24D795DA28AD7499006D40F6 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
+		24FF652128AD882B00DC0A49 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +42,7 @@
 			isa = PBXGroup;
 			children = (
 				244C7D6A28AD6EFB0085A24D /* data.json */,
+				24FF652128AD882B00DC0A49 /* DataService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 				246E108E28AAC27200D3E9CA /* ContentView.swift in Sources */,
 				24D795DB28AD7499006D40F6 /* Season.swift in Sources */,
 				246E108C28AAC27200D3E9CA /* SilverArrowsApp.swift in Sources */,
+				24FF652228AD882B00DC0A49 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
