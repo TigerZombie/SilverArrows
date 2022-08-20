@@ -14,24 +14,47 @@ struct ContentView: View {
     
     var body: some View {
         
-        CardView(carName: $carName, season: $season)
-        .edgesIgnoringSafeArea(.all)
+        ZStack {
+            CustomColors.overallBackground
+                .edgesIgnoringSafeArea(.all)
+            ScrollView (showsIndicators: false) {
+                Image("LogoAMGPetronas")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 260)
+                    .padding(.bottom, 16)
+            CardView(carName: $carName, season: $season)
+                   
+                CardView(carName: $carName, season: $season)
+                CardView(carName: $carName, season: $season)
+                CardView(carName: $carName, season: $season)
+                CardView(carName: $carName, season: $season)
+                CardView(carName: $carName, season: $season)
+                CardView(carName: $carName, season: $season)
+                CardView(carName: $carName, season: $season)
+                CardView(carName: $carName, season: $season)
+                
+            }
+        }
+            
+               
+    
         
     }
     
-    init() {
-        for family in UIFont.familyNames {
-            print(family)
-            for fontname in UIFont.fontNames(forFamilyName: family) {
-                print("--\(fontname)")
-            }
-        }
-    }
+//    init() {
+//        for family in UIFont.familyNames {
+//            print(family)
+//            for fontname in UIFont.fontNames(forFamilyName: family) {
+//                print("--\(fontname)")
+//            }
+//        }
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-         //  .preferredColorScheme(.dark)
+          .preferredColorScheme(.dark)
     }
 }

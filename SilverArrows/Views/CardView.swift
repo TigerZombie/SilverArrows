@@ -15,7 +15,7 @@ struct CardView: View {
     var body: some View {
         ZStack {
             
-            CustomColors.overallBackground
+           
         
         ZStack (alignment: .leading){
         
@@ -54,6 +54,7 @@ struct CardView: View {
     }
         
         .padding(.horizontal)
+        .padding(.bottom, 8)
     }
     }
 }
