@@ -11,10 +11,10 @@ import SwiftUI
 extension Font {
     
     public static var customFontTitle: Font {
-        return Font.custom("Roboto-Bold", size: 22)
+        return Font.custom("Roboto-Bold", size: 17)
     }
     public static var customFontBody: Font {
-        return Font.custom("Roboto-Regular", size: 16)
+        return Font.custom("Roboto-Regular", size: 14)
     }
     
 }
