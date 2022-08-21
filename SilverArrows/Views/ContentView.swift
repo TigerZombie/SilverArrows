@@ -17,27 +17,26 @@ struct ContentView: View {
             CustomColors.overallBackground
                 .edgesIgnoringSafeArea(.all)
             ScrollView (showsIndicators: false) {
+                VStack{
                 Image("LogoAMGPetronas")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 260)
                     .padding(.bottom, 16)
-                List(season.seasons) { s in
+                
                     
-                    Text(s.name)
-                        .foregroundColor(.green)
+                    ForEach (season.seasons) { s in
+                        Text(s.name)
+                        
+                    }
                     
                     //CardView(carName: s.name, season: s.season)
                     
                 }
-     
+                }
             }
         }
             
-               
-    
-        
-    }
     
 //    init() {
 //        for family in UIFont.familyNames {
