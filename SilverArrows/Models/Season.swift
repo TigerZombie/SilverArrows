@@ -7,7 +7,7 @@
 
 import Foundation
 
-class SeasonJSON: Identifiable, Decodable {
+class Season: Identifiable, Decodable {
     
     var id: Int
     var image: String
@@ -16,7 +16,8 @@ class SeasonJSON: Identifiable, Decodable {
     var drivers: [String]
     var championshipPoints: String
     var teamChampionship: Bool
-    var driversChampionship: [Bool:String]
+    var driversChampionship: Bool
+    var driverChampion: String
       
     
 }

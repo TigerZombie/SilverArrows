@@ -22,7 +22,6 @@
 		246E109028AAC27300D3E9CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246E108F28AAC27300D3E9CA /* Assets.xcassets */; };
 		246E109328AAC27300D3E9CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 246E109228AAC27300D3E9CA /* Preview Assets.xcassets */; };
 		24D795DB28AD7499006D40F6 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D795DA28AD7499006D40F6 /* Season.swift */; };
-		24FF652228AD882B00DC0A49 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF652128AD882B00DC0A49 /* DataService.swift */; };
 		24FF652528AEEB7300DC0A49 /* RoundedCornersLeft.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF652428AEEB7300DC0A49 /* RoundedCornersLeft.swift */; };
 		24FF652728AEEC4A00DC0A49 /* RoundedCornersRight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF652628AEEC4A00DC0A49 /* RoundedCornersRight.swift */; };
 		24FF652A28AEF1D400DC0A49 /* CustomColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24FF652928AEF1D400DC0A49 /* CustomColors.swift */; };
@@ -46,7 +45,6 @@
 		246E108F28AAC27300D3E9CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		246E109228AAC27300D3E9CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		24D795DA28AD7499006D40F6 /* Season.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Season.swift; sourceTree = "<group>"; };
-		24FF652128AD882B00DC0A49 /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		24FF652428AEEB7300DC0A49 /* RoundedCornersLeft.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersLeft.swift; sourceTree = "<group>"; };
 		24FF652628AEEC4A00DC0A49 /* RoundedCornersRight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersRight.swift; sourceTree = "<group>"; };
 		24FF652928AEF1D400DC0A49 /* CustomColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColors.swift; sourceTree = "<group>"; };
@@ -81,7 +79,6 @@
 			isa = PBXGroup;
 			children = (
 				244C7D6A28AD6EFB0085A24D /* data.json */,
-				24FF652128AD882B00DC0A49 /* DataService.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -256,7 +253,6 @@
 				246E108C28AAC27200D3E9CA /* SilverArrowsApp.swift in Sources */,
 				2409141D28B16D1D004D0FFD /* CardView.swift in Sources */,
 				2409143328B174BC004D0FFD /* Fonts.swift in Sources */,
-				24FF652228AD882B00DC0A49 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,8 +7,9 @@
 "season":"2010",
 "drivers": ["Nico Rosberg", "Michael Schumacher"],
 "championshipPoints":"214",
-"teamChampionship":"false",
-"driverChampionship":["false":""]
+"teamChampionship": false,
+"driversChampionship": false,
+"driverChampion": ""
 },
 
 {
@@ -18,8 +19,9 @@
 "season":"2011",
 "drivers": ["Nico Rosberg", "Michael Schumacher"],
 "championshipPoints":"165",
-"teamChampionship":"false",
-"driverChampionship":["false":""]
+"teamChampionship": false,
+"driversChampionship": false,
+"driverChampion": ""
 },
 
 {
@@ -29,8 +31,9 @@
 "season":"2012",
 "drivers": ["Nico Rosberg", "Michael Schumacher"],
 "championshipPoints":"142",
-"teamChampionship":"false",
-"driverChampionship":["false":""]
+"teamChampionship": false,
+"driversChampionship": false,
+"driverChampion": ""
 },
 
 {
@@ -40,8 +43,9 @@
 "season":"2013",
 "drivers": ["Nico Rosberg", "Lewis Hamilton"],
 "championshipPoints":"360",
-"teamChampionship":"false",
-"driverChampionship":["false":""]
+"teamChampionship": false,
+"driversChampionship": false,
+"driverChampion": ""
 },
 
 {
@@ -51,8 +55,9 @@
 "season":"2014",
 "drivers": ["Nico Rosberg", "Lewis Hamilton"],
 "championshipPoints":"701",
-"teamChampionship":"true",
-"driverChampionship":["true":"Lewis Hamilton"]
+"teamChampionship": true,
+"driversChampionship": true,
+"driverChampion": "Lewis Hamilton"
 },
 
 {
@@ -62,8 +67,9 @@
 "season":"2015",
 "drivers": ["Nico Rosberg", "Lewis Hamilton"],
 "championshipPoints":"703",
-"teamChampionship":"true",
-"driverChampionship":["true":"Lewis Hamilton"]
+"teamChampionship": true,
+"driversChampionship": true,
+"driverChampion": "Lewis Hamilton"
 },
 
 {
@@ -73,8 +79,9 @@
 "season":"2016",
 "drivers": ["Nico Rosberg", "Lewis Hamilton"],
 "championshipPoints":"765",
-"teamChampionship":"true",
-"driverChampionship":["true":"Nico Rosberg"]
+"teamChampionship": true,
+"driversChampionship": true,
+"driverChampion": "Nico Rosberg"
 },
 
 {
@@ -84,8 +91,9 @@
 "season":"2017",
 "drivers": ["Lewis Hamilton", "Valtteri Bottas"],
 "championshipPoints":"668",
-"teamChampionship":"true",
-"driverChampionship":["true":"Lewis Hamilton"]
+"teamChampionship": true,
+"driversChampionship": true,
+"driverChampion": "Lewis Hamilton"
 },
 
 {
@@ -95,8 +103,9 @@
 "season":"2018",
 "drivers": ["Lewis Hamilton", "Valtteri Bottas"],
 "championshipPoints":"655",
-"teamChampionship":"true",
-"driverChampionship":["true":"Lewis Hamilton"]
+"teamChampionship": true,
+"driversChampionship": true,
+"driverChampion": "Lewis Hamilton"
 },
 
 {
@@ -106,8 +115,9 @@
 "season":"2019",
 "drivers": ["Lewis Hamilton", "Valtteri Bottas"],
 "championshipPoints":"739",
-"teamChampionship":"true",
-"driverChampionship":["true":"Lewis Hamilton"]
+"teamChampionship": true,
+"driversChampionship": true,
+"driverChampion": "Lewis Hamilton"
 },
 
 {
@@ -117,8 +127,9 @@
 "season":"2020",
 "drivers": ["Lewis Hamilton", "Valtteri Bottas"],
 "championshipPoints":"573",
-"teamChampionship":"true",
-"driverChampionship":["true":"Lewis Hamilton"]
+"teamChampionship": true,
+"driversChampionship": true,
+"driverChampion": "Lewis Hamilton"
 },
 
 {
@@ -128,8 +139,9 @@
 "season":"2021",
 "drivers": ["Lewis Hamilton", "Valtteri Bottas"],
 "championshipPoints":"613,5",
-"teamChampionship":"true",
-"driverChampionship":["false":""]
+"teamChampionship": true,
+"driversChampionship": false,
+"driverChampion": ""
 }
 
 ]

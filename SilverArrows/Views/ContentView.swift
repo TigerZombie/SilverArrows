@@ -9,8 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     
-  @State var carName = "MGP W01"
-  @State var season = "2010"
+    @ObservedObject var season = SeasonModel()
     
     var body: some View {
         
@@ -23,17 +22,15 @@ struct ContentView: View {
                     .scaledToFit()
                     .frame(width: 260)
                     .padding(.bottom, 16)
-            CardView(carName: $carName, season: $season)
-                   
-                CardView(carName: $carName, season: $season)
-                CardView(carName: $carName, season: $season)
-                CardView(carName: $carName, season: $season)
-                CardView(carName: $carName, season: $season)
-                CardView(carName: $carName, season: $season)
-                CardView(carName: $carName, season: $season)
-                CardView(carName: $carName, season: $season)
-                CardView(carName: $carName, season: $season)
-                
+                List(season.seasons) { s in
+                    
+                    Text(s.name)
+                        .foregroundColor(.green)
+                    
+                    //CardView(carName: s.name, season: s.season)
+                    
+                }
+     
             }
         }
             
