@@ -15,9 +15,15 @@ struct ContentView: View {
     var body: some View {
         
         ZStack {
+            
+            // Background Color
             CustomColors.overallBackground
                 .edgesIgnoringSafeArea(.all)
+            
+            // Scrollview on top of background color, hidden indicators
             ScrollView (showsIndicators: false) {
+                
+                // Stack of logo and cards
                 VStack{
                 Image("LogoAMGPetronas")
                     .resizable()
@@ -25,19 +31,26 @@ struct ContentView: View {
                     .frame(width: 260)
                     .padding(.bottom, 16)
                 
-                    
+                    // List of cards
                     ForEach (F1season.seasons) { s in
                      
                         ZStack {
                            
                         ZStack (alignment: .leading){
                         
+                            
                         HStack (spacing: 0){
+                            
+                            // invisible background item on left side, to align the right side item (the part with text). Also: Will provide the shadow below the picture.
                         RoundedCornersLeft()
                                 .foregroundColor(.white)
                                 .frame(width: 132)
                                 .shadow(color: CustomColors.cardShadow, radius: 4, x: 4, y: 4)
+                           
+                            
                             ZStack{
+                                
+                                // the part of the card with text
                             RoundedCornersRight()
                                     .fill(CustomColors.cardBackground)
                                     .shadow(color: CustomColors.cardShadow, radius: 4, x: 4, y: 4)
@@ -54,9 +67,11 @@ struct ContentView: View {
                                 
                                 .frame(width: 198)
                         }
+                            
+                            // Height of complete card
                         .frame(height: 95)
                         
-                            
+                            // Image with shadow only to the right side (cropped with mask modifier)
                             Image("\(s.season) \(s.name)")
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -78,7 +93,7 @@ struct ContentView: View {
             }
         }
             
-    
+    // to check the font names
 //    init() {
 //        for family in UIFont.familyNames {
 //            print(family)
@@ -87,6 +102,7 @@ struct ContentView: View {
 //            }
 //        }
 //    }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
