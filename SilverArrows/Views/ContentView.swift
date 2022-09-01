@@ -119,14 +119,15 @@ struct ContentView: View {
                                         }
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .padding(.horizontal)
+                                        // Next padding will define the bottom part of the card, automatically adjusting it to what is needed by the VStack (text)
+                                        .padding([.top, .bottom])
                                         
                                     }
-                                    
                                     .frame(width: 330)
                                 }
                                 
                                 // Height of complete card
-                                .frame(height: 280)
+                               // .frame(height: 280)
                                 
                                 // Image with shadow only to the right side (cropped with mask modifier)
                                 Image("\(s.season) \(s.name)")
@@ -229,6 +230,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .preferredColorScheme(.dark)
+           .preferredColorScheme(.dark)
     }
 }
