@@ -43,6 +43,7 @@ struct ContentView: View {
                         .padding(.bottom, 16)
                     
                     // List of cards
+                   
                     ForEach (F1season.seasons) { s in
                         
                         if idSelection == s.id {
@@ -120,10 +121,12 @@ struct ContentView: View {
                                                         }
                                                         .font(.customFontBody)
                                                         .foregroundColor(CustomColors.cardText)
+                                                        
                                                     }
-                                                    
+                                                      
                                                 
                                                 }
+                                               
                                                     // Pushing the text to the leading edge
                                                     Spacer()
                                                 }
@@ -209,18 +212,13 @@ struct ContentView: View {
                                 .padding(.horizontal)
                                 .padding(.bottom, 8)
                             }
-                        
+                            
                         .onTapGesture {
                             idSelection = s.id
                         }
-                         
-                        
                         }
                         
-                      
-                        
                     }
-                    
                     
                 }
             }
