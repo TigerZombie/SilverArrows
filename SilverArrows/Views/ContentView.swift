@@ -61,13 +61,17 @@ struct ContentView: View {
                                         .shadow(color: CustomColors.cardShadow, radius: 4, x: 4, y: 4)
                                     
                                     
-                                    ZStack{
+                                    ZStack {
                                         
                                         // the part of the card with text
                                         RoundedCornersBottom()
                                             .fill(CustomColors.cardBackground)
                                             .shadow(color: CustomColors.cardShadow, radius: 4, x: 4, y: 4)
                                         VStack  {
+                                            // Centering the car name and season
+                                            HStack {
+                                                Spacer()
+                                                VStack {
                                             Text(s.name)
                                                 .font(.customFontTitle)
                                                 .foregroundColor(CustomColors.cardText)
@@ -75,6 +79,11 @@ struct ContentView: View {
                                             Text("\(s.season) season")
                                                 .font(.customFontBody)
                                                 .foregroundColor(CustomColors.cardText)
+                                                }
+                                                Spacer()
+                                            }
+                                            HStack {
+                                                
                                             
                                             VStack (alignment: .leading) {
                                                 HStack {
@@ -115,10 +124,13 @@ struct ContentView: View {
                                                 
                                             
                                             }
+                                                // Pushing the text to the leading edge
+                                                Spacer()
+                                            }
                                             .padding(.top, 10)
                                         }
                                         .frame(maxWidth: .infinity, alignment: .leading)
-                                        .padding(.horizontal)
+                                      .padding(.horizontal)
                                         // Next padding will define the bottom part of the card, automatically adjusting it to what is needed by the VStack (text)
                                         .padding([.top, .bottom])
                                         
