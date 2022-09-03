@@ -15,6 +15,8 @@
 		2409143128B17419004D0FFD /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2409142B28B17419004D0FFD /* Roboto-Medium.ttf */; };
 		2409143328B174BC004D0FFD /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2409143228B174BC004D0FFD /* Fonts.swift */; };
 		244C7D6B28AD6EFB0085A24D /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = 244C7D6A28AD6EFB0085A24D /* data.json */; };
+		245235B128C35876002B7299 /* CollapsedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245235B028C35876002B7299 /* CollapsedCardView.swift */; };
+		245235B328C39C8C002B7299 /* ExpandedCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245235B228C39C8C002B7299 /* ExpandedCardView.swift */; };
 		2452C77E28BE9CF600DD5926 /* RoundedCornersTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452C77D28BE9CF600DD5926 /* RoundedCornersTop.swift */; };
 		2452C78028BE9D6C00DD5926 /* RoundedCornersBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2452C77F28BE9D6C00DD5926 /* RoundedCornersBottom.swift */; };
 		245F553028B244380015DE76 /* SeasonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 245F552F28B244380015DE76 /* SeasonModel.swift */; };
@@ -38,6 +40,8 @@
 		2409142B28B17419004D0FFD /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		2409143228B174BC004D0FFD /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		244C7D6A28AD6EFB0085A24D /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		245235B028C35876002B7299 /* CollapsedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsedCardView.swift; sourceTree = "<group>"; };
+		245235B228C39C8C002B7299 /* ExpandedCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpandedCardView.swift; sourceTree = "<group>"; };
 		2452C77D28BE9CF600DD5926 /* RoundedCornersTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersTop.swift; sourceTree = "<group>"; };
 		2452C77F28BE9D6C00DD5926 /* RoundedCornersBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCornersBottom.swift; sourceTree = "<group>"; };
 		245F552F28B244380015DE76 /* SeasonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeasonModel.swift; sourceTree = "<group>"; };
@@ -131,6 +135,8 @@
 			isa = PBXGroup;
 			children = (
 				246E108D28AAC27200D3E9CA /* ContentView.swift */,
+				245235B028C35876002B7299 /* CollapsedCardView.swift */,
+				245235B228C39C8C002B7299 /* ExpandedCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,10 +259,12 @@
 				2452C77E28BE9CF600DD5926 /* RoundedCornersTop.swift in Sources */,
 				24FF652A28AEF1D400DC0A49 /* CustomColors.swift in Sources */,
 				246E108E28AAC27200D3E9CA /* ContentView.swift in Sources */,
+				245235B128C35876002B7299 /* CollapsedCardView.swift in Sources */,
 				24D795DB28AD7499006D40F6 /* Season.swift in Sources */,
 				246E108C28AAC27200D3E9CA /* SilverArrowsApp.swift in Sources */,
 				2409143328B174BC004D0FFD /* Fonts.swift in Sources */,
 				2452C78028BE9D6C00DD5926 /* RoundedCornersBottom.swift in Sources */,
+				245235B328C39C8C002B7299 /* ExpandedCardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
