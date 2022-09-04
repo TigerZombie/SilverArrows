@@ -52,6 +52,7 @@ struct CollapsedCardView: View {
                 .frame(width: 198)
             }
             
+            
             // Height of complete card
             .frame(height: pictureHeightUnselected)
             

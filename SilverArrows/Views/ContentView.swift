@@ -16,7 +16,7 @@ struct ContentView: View {
     @State var SeasonToPass: Season
     
     var logoWidth: CGFloat = 260
- 
+    
     
     var body: some View {
         
@@ -38,7 +38,7 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(width: logoWidth)
                         .padding(.bottom, 16)
-                        
+                    
                     
                     // List of cards
                     
@@ -46,41 +46,43 @@ struct ContentView: View {
                         
                         
                         
-                       if idSelection == s.id {
-                          
+                        if idSelection == s.id {
                            
                             // View for expanded card
                             
                             ExpandedCardView(s: $SeasonToPass)
-                            
-                            .padding(.horizontal)
-                            .padding(.bottom, 8)
-                            
-                       }
-                            
+                                
+                                .padding(.horizontal)
+                                .padding(.bottom, 8)
+                                .onAppear {
+                                    SeasonToPass = s
+                                }
+                        }
+                      
                         
                         else {
                             
                             // View for collapsed card
                             
-                        CollapsedCardView(s: $SeasonToPass)
+                            CollapsedCardView(s: $SeasonToPass)
+                                
+                                .padding(.horizontal)
+                                .padding(.bottom, 8)
+                               
+                                .onTapGesture {
+                                    idSelection = s.id
+                                }
                             
-                            .padding(.horizontal)
-                            .padding(.bottom, 8)
-                            
-                            .onTapGesture {
-                                idSelection = s.id
-                            }
-                       }
+                        }
                         
                     }
                     
+                    }
                 }
-            }
+            
         }
-    
+     
     }
-    
     
     
     // to check the font names
