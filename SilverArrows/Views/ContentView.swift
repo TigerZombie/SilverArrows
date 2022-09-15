@@ -65,7 +65,7 @@ struct ContentView: View {
                                     .font(.customFontTitle)
                                     .foregroundColor(CustomColors.cardText)
                                     .rotationEffect(.degrees(searchIsExpanded ? 0 : 90))
-                                    .animation(.easeIn)
+                                    .animation(.easeOut, value: searchIsExpanded)
                                     
                             }
                             .padding()
@@ -107,9 +107,9 @@ struct ContentView: View {
                     .frame(width: pictureWidthSelected)
                     
                         }
-                        } .animation(.default.delay(0.3))
+                        } .animation(.default.delay(0.2), value: searchIsExpanded)
                     }
-                    .animation(.easeIn(duration: 0.3))
+                    .animation(.easeInOut(duration: 0.3), value: searchIsExpanded)
                     .frame(width: pictureWidthSelected)
                     
                     // List of cards
@@ -239,6 +239,8 @@ struct ContentView: View {
                         
                         else {
                             
+                            
+                            
                             // View for collapsed card
                             
                             ZStack (alignment: .leading){
@@ -294,8 +296,8 @@ struct ContentView: View {
                                 .onTapGesture {
                                     idSelection = s.id
                                 }
-                            
-                        }
+                            }
+                        
                         
                     }
                     
@@ -323,6 +325,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-          //  .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }
