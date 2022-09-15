@@ -9,8 +9,7 @@ import SwiftUI
 
 struct CollapsedCardView: View {
     
-    @ObservedObject var F1season = SeasonModel()
-    @Binding var s: Season
+    let s: Season
     
     @State private var pictureWidthUnselected: CGFloat = 132
     @State private var pictureHeightUnselected: CGFloat = 95

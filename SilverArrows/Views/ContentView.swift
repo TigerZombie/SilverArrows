@@ -13,10 +13,12 @@ struct ContentView: View {
     
     @State private var idSelection: Int = 0
     
-    @State var SeasonToPass: Season
-    
     var logoWidth: CGFloat = 260
     
+    @State private var pictureWidthSelected: CGFloat = 330
+    @State private var searchIsExpanded: Bool = false
+    @State private var championshipSelected: Bool = false
+    @State private var championshipPointsSelected: Float = 0
     
     var body: some View {
         
@@ -39,6 +41,72 @@ struct ContentView: View {
                         .frame(width: logoWidth)
                         .padding(.bottom, 16)
                     
+                    // Search bar
+                                        ZStack {
+                                        RoundedRectangle(cornerRadius: 20)
+                                                .stroke(CustomColors.cardShadow, lineWidth: 2.5)
+                                        
+                                            VStack (alignment: .leading) {
+                                                HStack{
+                                            Text("Search Pane")
+                                                    .font(.customFontTitle)
+                                                    .foregroundColor(CustomColors.cardText)
+                                                    
+                                                    
+                                                    Spacer()
+                                                    
+                                                    Image(systemName: "chevron.down")
+                                                        .font(.customFontTitle)
+                                                        .foregroundColor(CustomColors.cardText)
+                                                        .rotationEffect(.degrees(searchIsExpanded ? 0 : 90))
+                                                        .animation(.easeOut, value: searchIsExpanded)
+                                                        
+                                                }
+                                                .padding()
+                                                .onTapGesture {
+                                                    if searchIsExpanded == true {
+                                                        championshipSelected = false
+                                                        championshipPointsSelected = 0
+                                                    }
+                                                    searchIsExpanded.toggle()
+                                                }
+                                                
+                                                
+                                                if searchIsExpanded {
+                                        // Search bars: Slider, Toggle
+                                        VStack {
+                                            
+                                            VStack (alignment: .center){
+                                                Text("Minimum championship points:  \(Int(championshipPointsSelected))")
+                                                    
+                                            Slider(value: $championshipPointsSelected, in: 0...765, step: 1)
+                                                    .tint(CustomColors.cardShadow)
+                                                    .padding(5)
+                                                    .background(Capsule().fill(CustomColors.cardBackground))
+                                                    
+                                            }
+                                            
+                                            Toggle(isOn: $championshipSelected) {
+                                                Text("Only team championship seasons")
+                                                    
+                                            }
+                                            .padding(.vertical, 5)
+                                            .padding(.horizontal, 7)
+                                            .background(Capsule().fill(CustomColors.cardBackground))
+                                            .tint(CustomColors.cardShadow)
+                                        }
+                                        .font(.customFontBody)
+                                        .foregroundColor(CustomColors.cardText)
+                                        .padding(.vertical, 10)
+                                        .frame(width: pictureWidthSelected)
+                                        
+                                            }
+                                            } .animation(.default.delay(0.2), value: searchIsExpanded)
+                                        }
+                                        .animation(.easeInOut(duration: 0.3), value: searchIsExpanded)
+                                        .frame(width: pictureWidthSelected)
+
+                    
                     
                     // List of cards
                     
@@ -47,28 +115,26 @@ struct ContentView: View {
                         
                         
                         if idSelection == s.id {
-                           
+                            
                             // View for expanded card
                             
-                            ExpandedCardView(s: $SeasonToPass)
-                                
+                            ExpandedCardView(s: s)
+                            
                                 .padding(.horizontal)
                                 .padding(.bottom, 8)
-                                .onAppear {
-                                    SeasonToPass = s
-                                }
+                            
                         }
-                      
+                        
                         
                         else {
                             
                             // View for collapsed card
                             
-                            CollapsedCardView(s: $SeasonToPass)
-                                
+                            CollapsedCardView(s: s)
+                            
                                 .padding(.horizontal)
                                 .padding(.bottom, 8)
-                               
+                            
                                 .onTapGesture {
                                     idSelection = s.id
                                 }
@@ -77,11 +143,11 @@ struct ContentView: View {
                         
                     }
                     
-                    }
                 }
+            }
             
         }
-     
+        
     }
     
     
@@ -100,7 +166,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(SeasonToPass: Season(id: 1, image: "", name: "MGP W01", season: "2010", drivers: ["Nico1", "Michael2"], championshipPoints: "214", teamChampionship: false, driversChampionship: false, driverChampion: ""))
-            .preferredColorScheme(.dark)
+        ContentView()
+           .preferredColorScheme(.dark)
     }
 }
