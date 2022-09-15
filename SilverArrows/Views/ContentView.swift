@@ -67,6 +67,7 @@ struct ContentView: View {
                                                     if searchIsExpanded == true {
                                                         championshipSelected = false
                                                         championshipPointsSelected = 0
+                                                        idSelection = 0
                                                     }
                                                     searchIsExpanded.toggle()
                                                 }
@@ -113,33 +114,36 @@ struct ContentView: View {
                     ForEach (F1season.seasons) { s in
                         
                         
-                        
-                        if idSelection == s.id {
+                            if idSelection == s.id {
+                                
+                                // View for expanded card
+                                
+                                ExpandedCardView(s: s)
+                                
+                                    .padding(.horizontal)
+                                    .padding(.bottom, 8)
+                                
+                            }
                             
-                            // View for expanded card
                             
-                            ExpandedCardView(s: s)
-                            
-                                .padding(.horizontal)
-                                .padding(.bottom, 8)
+                            else {
+                                
+                                // View for collapsed card
+                                
+                                CollapsedCardView(s: s)
+                                
+                                    .padding(.horizontal)
+                                    .padding(.bottom, 8)
+                                
+                                    .onTapGesture {
+                                        idSelection = s.id
+                                    }
+                                
                             
                         }
                         
-                        
-                        else {
+                      
                             
-                            // View for collapsed card
-                            
-                            CollapsedCardView(s: s)
-                            
-                                .padding(.horizontal)
-                                .padding(.bottom, 8)
-                            
-                                .onTapGesture {
-                                    idSelection = s.id
-                                }
-                            
-                        }
                         
                     }
                     
