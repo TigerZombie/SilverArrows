@@ -20,8 +20,9 @@ struct ContentView: View {
     
     @State private var idSelection: Int = 0
     
-    //@State var SeasonToPass: Season
-    
+    @State private var searchIsExpanded: Bool = true
+    @State private var championshipSelected: Bool = false
+    @State private var sliderValue: Float = 0
    
     
     
@@ -36,7 +37,7 @@ struct ContentView: View {
             // Scrollview on top of background color, hidden indicators
             ScrollView (showsIndicators: false) {
                 
-                // Stack of Mercedes logo and cards
+                // Stack of Mercedes logo, search bars and cards
                 VStack{
                     
                     // Mercedes Logo
@@ -46,6 +47,70 @@ struct ContentView: View {
                         .frame(width: logoWidth)
                         .padding(.bottom, 16)
                     
+                  // Search bar
+                    ZStack {
+                    RoundedRectangle(cornerRadius: 20)
+                            .stroke(CustomColors.cardShadow, lineWidth: 2.5)
+                    
+                        VStack (alignment: .leading) {
+                            HStack{
+                        Text("Search Pane")
+                                .font(.customFontTitle)
+                                .foregroundColor(CustomColors.cardText)
+                                
+                                
+                                Spacer()
+                                
+                                Image(systemName: "chevron.down")
+                                    .font(.customFontTitle)
+                                    .foregroundColor(CustomColors.cardText)
+                                    .rotationEffect(.degrees(searchIsExpanded ? 0 : 90))
+                                    .animation(.easeIn)
+                                    
+                            }
+                            .padding()
+                            .onTapGesture {
+                                if searchIsExpanded == true {
+                                    championshipSelected = false
+                                    sliderValue = 0
+                                }
+                                searchIsExpanded.toggle()
+                            }
+                            
+                            
+                            if searchIsExpanded {
+                    // Search bars: Slider, Toggle
+                    VStack {
+                        
+                        VStack (alignment: .center){
+                            Text("Minimum championship points:  \(Int(sliderValue))")
+                                
+                        Slider(value: $sliderValue, in: 0...765, step: 1)
+                                .tint(CustomColors.cardShadow)
+                                .padding(5)
+                                .background(Capsule().fill(CustomColors.cardBackground))
+                                
+                        }
+                        
+                        Toggle(isOn: $championshipSelected) {
+                            Text("Only team championship seasons")
+                                
+                        }
+                        .padding(.vertical, 5)
+                        .padding(.horizontal, 7)
+                        .background(Capsule().fill(CustomColors.cardBackground))
+                        .tint(CustomColors.cardShadow)
+                    }
+                    .font(.customFontBody)
+                    .foregroundColor(CustomColors.cardText)
+                    .padding(.vertical, 10)
+                    .frame(width: pictureWidthSelected)
+                    
+                        }
+                        } .animation(.default.delay(0.3))
+                    }
+                    .animation(.easeIn(duration: 0.3))
+                    .frame(width: pictureWidthSelected)
                     
                     // List of cards
                     
@@ -258,7 +323,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-//    SeasonToPass: Season(id: 1, image: "", name: "MGP W01", season: "2010", drivers: ["Nico1", "Michael2"], championshipPoints: "214", teamChampionship: false, driversChampionship: false, driverChampion: ""))
-            .preferredColorScheme(.dark)
+          //  .preferredColorScheme(.dark)
     }
 }
