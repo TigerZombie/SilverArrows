@@ -116,10 +116,10 @@ struct ContentView: View {
                     
                     ForEach (F1season.seasons) { s in
                         
-                        
-                        
+                       
                         if idSelection == s.id {
                            
+                            
                             // View for expanded card
                             
                             ZStack (alignment: .top){
@@ -231,15 +231,11 @@ struct ContentView: View {
                         
                                 .padding(.horizontal)
                                 .padding(.bottom, 8)
-//                                .onAppear {
-//                                    SeasonToPass = s
-//                                }
+
                         }
                       
                         
                         else {
-                            
-                            
                             
                             // View for collapsed card
                             
@@ -298,8 +294,8 @@ struct ContentView: View {
                                 }
                             }
                         
-                        
-                    }
+                        }
+                       
                     
                     }
                 }
