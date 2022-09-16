@@ -48,71 +48,71 @@ struct ContentView: View {
                         }
                     
                     // Search bar
-                                        ZStack {
-                                        RoundedRectangle(cornerRadius: 20)
-                                                .stroke(CustomColors.cardShadow, lineWidth: 2.5)
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 20)
+                            .stroke(CustomColors.cardShadow, lineWidth: 2.5)
+                        
+                        VStack (alignment: .leading) {
+                            HStack{
+                                Text("Search Pane")
+                                    .font(.customFontTitle)
+                                    .foregroundColor(CustomColors.cardText)
+                                
+                                
+                                Spacer()
+                                
+                                Image(systemName: "chevron.down")
+                                    .font(.customFontTitle)
+                                    .foregroundColor(CustomColors.cardText)
+                                    .rotationEffect(.degrees(searchIsExpanded ? 0 : 90))
+                                    .animation(.easeOut, value: searchIsExpanded)
+                                
+                            }
+                            .padding()
+                            .onTapGesture {
+                                if searchIsExpanded == true {
+                                    championshipSelected = false
+                                    championshipPointsSelected = 0
+                                    idSelection = 0
+                                }
+                                searchIsExpanded.toggle()
+                            }
+                            
+                            
+                            if searchIsExpanded {
+                                // Search bars: Slider, Toggle
+                                VStack {
+                                    
+                                    VStack (alignment: .center){
+                                        Text("Minimum championship points:  \(Int(championshipPointsSelected))")
                                         
-                                            VStack (alignment: .leading) {
-                                                HStack{
-                                            Text("Search Pane")
-                                                    .font(.customFontTitle)
-                                                    .foregroundColor(CustomColors.cardText)
-                                                    
-                                                    
-                                                    Spacer()
-                                                    
-                                                    Image(systemName: "chevron.down")
-                                                        .font(.customFontTitle)
-                                                        .foregroundColor(CustomColors.cardText)
-                                                        .rotationEffect(.degrees(searchIsExpanded ? 0 : 90))
-                                                        .animation(.easeOut, value: searchIsExpanded)
-                                                        
-                                                }
-                                                .padding()
-                                                .onTapGesture {
-                                                    if searchIsExpanded == true {
-                                                        championshipSelected = false
-                                                        championshipPointsSelected = 0
-                                                        idSelection = 0
-                                                    }
-                                                    searchIsExpanded.toggle()
-                                                }
-                                                
-                                                
-                                                if searchIsExpanded {
-                                        // Search bars: Slider, Toggle
-                                        VStack {
-                                            
-                                            VStack (alignment: .center){
-                                                Text("Minimum championship points:  \(Int(championshipPointsSelected))")
-                                                    
-                                                Slider(value: $championshipPointsSelected, in: 0...Float(championshipPointsForSlider), step: 1)
-                                                    .tint(CustomColors.cardShadow)
-                                                    .padding(5)
-                                                    .background(Capsule().fill(CustomColors.cardBackground))
-                                                    
-                                            }
-                                            
-                                            Toggle(isOn: $championshipSelected) {
-                                                Text("Only team championship seasons")
-                                                    
-                                            }
-                                            .padding(.vertical, 5)
-                                            .padding(.horizontal, 7)
-                                            .background(Capsule().fill(CustomColors.cardBackground))
+                                        Slider(value: $championshipPointsSelected, in: 0...Float(championshipPointsForSlider), step: 1)
                                             .tint(CustomColors.cardShadow)
-                                        }
-                                        .font(.customFontBody)
-                                        .foregroundColor(CustomColors.cardText)
-                                        .padding(.vertical, 10)
-                                        .frame(width: pictureWidthSelected)
+                                            .padding(5)
+                                            .background(Capsule().fill(CustomColors.cardBackground))
                                         
-                                            }
-                                            } .animation(.default.delay(0.2), value: searchIsExpanded)
-                                        }
-                                        .animation(.easeInOut(duration: 0.3), value: searchIsExpanded)
-                                        .frame(width: pictureWidthSelected)
-
+                                    }
+                                    
+                                    Toggle(isOn: $championshipSelected) {
+                                        Text("Only team championship seasons")
+                                        
+                                    }
+                                    .padding(.vertical, 5)
+                                    .padding(.horizontal, 7)
+                                    .background(Capsule().fill(CustomColors.cardBackground))
+                                    .tint(CustomColors.cardShadow)
+                                }
+                                .font(.customFontBody)
+                                .foregroundColor(CustomColors.cardText)
+                                .padding(.vertical, 10)
+                                .frame(width: pictureWidthSelected)
+                                
+                            }
+                        } .animation(.default.delay(0.2), value: searchIsExpanded)
+                    }
+                    .animation(.easeInOut(duration: 0.3), value: searchIsExpanded)
+                    .frame(width: pictureWidthSelected)
+                    
                     
                     
                     // List of cards
@@ -121,73 +121,58 @@ struct ContentView: View {
                         
                         // Filter to show only the seasons with team championship
                         if championshipSelected == true && championshipPointsSelected == 0 {
-
-                        if s.teamChampionship == true {
-
                             
-                            if idSelection == s.id {
-
-                                // View for expanded card
-
-                                ExpandedCardView(s: s)
-
-                                    .padding(.horizontal)
-                                    .padding(.bottom, 8)
-
-                            }
-
-
-                            else {
-
-                                // View for collapsed card
-
-                                CollapsedCardView(s: s)
-
-                                    .padding(.horizontal)
-                                    .padding(.bottom, 8)
-                                    
-                                    .onTapGesture {
-                                        idSelection = s.id
-                                    }
-
-
-                        }
-
-                        }
-                        }
-                        
-                        // championship points filter applied
-                       else if championshipSelected == false && championshipPointsSelected >= 1 {
-                            if Float(s.championshipPoints) ?? 0 >= championshipPointsSelected {
-
+                            if s.teamChampionship == true {
+                                
                                 if idSelection == s.id {
-
+                                    
                                     // View for expanded card
-
                                     ExpandedCardView(s: s)
-
                                         .padding(.horizontal)
                                         .padding(.bottom, 8)
-
                                 }
-
-
+                                
+                                
                                 else {
-
+                                    
                                     // View for collapsed card
-
                                     CollapsedCardView(s: s)
-
                                         .padding(.horizontal)
                                         .padding(.bottom, 8)
-
                                         .onTapGesture {
                                             idSelection = s.id
                                         }
-
-
+                                    
+                                }
+                                
                             }
-
+                        }
+                        
+                        // championship points filter applied
+                        else if championshipSelected == false && championshipPointsSelected >= 1 {
+                            if Float(s.championshipPoints) ?? 0 >= championshipPointsSelected {
+                                
+                                if idSelection == s.id {
+                                    
+                                    // View for expanded card
+                                    ExpandedCardView(s: s)
+                                        .padding(.horizontal)
+                                        .padding(.bottom, 8)
+                                    
+                                }
+                                
+                                else {
+                                    
+                                    // View for collapsed card
+                                    CollapsedCardView(s: s)
+                                        .padding(.horizontal)
+                                        .padding(.bottom, 8)
+                                        .onTapGesture {
+                                            idSelection = s.id
+                                        }
+                                    
+                                }
+                                
                             }
                         }
                         
@@ -195,35 +180,28 @@ struct ContentView: View {
                         else if championshipSelected == true && championshipPointsSelected >= 1 {
                             
                             if s.teamChampionship == true && Float(s.championshipPoints) ?? 0 >= championshipPointsSelected {
-
+                                
                                 if idSelection == s.id {
-
+                                    
                                     // View for expanded card
-
                                     ExpandedCardView(s: s)
-
                                         .padding(.horizontal)
                                         .padding(.bottom, 8)
-
+                                    
                                 }
-
-
+                                
                                 else {
-
+                                    
                                     // View for collapsed card
-
                                     CollapsedCardView(s: s)
-
                                         .padding(.horizontal)
                                         .padding(.bottom, 8)
-
                                         .onTapGesture {
                                             idSelection = s.id
                                         }
-
-
-                            }
-
+                                    
+                                }
+                                
                             }
                             
                         }
@@ -233,30 +211,23 @@ struct ContentView: View {
                             if idSelection == s.id {
                                 
                                 // View for expanded card
-                                
                                 ExpandedCardView(s: s)
-                                
                                     .padding(.horizontal)
                                     .padding(.bottom, 8)
                                 
                             }
                             
-                            
                             else {
                                 
                                 // View for collapsed card
-                                
                                 CollapsedCardView(s: s)
-                                
                                     .padding(.horizontal)
                                     .padding(.bottom, 8)
-                                
                                     .onTapGesture {
                                         idSelection = s.id
                                     }
                                 
-                            
-                        }
+                            }
                         }
                         
                     }
@@ -300,6 +271,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-           .preferredColorScheme(.dark)
+            .preferredColorScheme(.dark)
     }
 }
