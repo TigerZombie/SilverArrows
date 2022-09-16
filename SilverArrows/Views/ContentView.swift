@@ -119,7 +119,117 @@ struct ContentView: View {
                     
                     ForEach (F1season.seasons) { s in
                         
+                        // Filter to show only the seasons with team championship
+                        if championshipSelected == true && championshipPointsSelected == 0 {
+
+                        if s.teamChampionship == true {
+
+                            
+                            if idSelection == s.id {
+
+                                // View for expanded card
+
+                                ExpandedCardView(s: s)
+
+                                    .padding(.horizontal)
+                                    .padding(.bottom, 8)
+
+                            }
+
+
+                            else {
+
+                                // View for collapsed card
+
+                                CollapsedCardView(s: s)
+
+                                    .padding(.horizontal)
+                                    .padding(.bottom, 8)
+                                    
+                                    .onTapGesture {
+                                        idSelection = s.id
+                                    }
+
+
+                        }
+
+                        }
+                        }
                         
+                        // championship points filter applied
+                       else if championshipSelected == false && championshipPointsSelected >= 1 {
+                            if Float(s.championshipPoints) ?? 0 >= championshipPointsSelected {
+
+                                if idSelection == s.id {
+
+                                    // View for expanded card
+
+                                    ExpandedCardView(s: s)
+
+                                        .padding(.horizontal)
+                                        .padding(.bottom, 8)
+
+                                }
+
+
+                                else {
+
+                                    // View for collapsed card
+
+                                    CollapsedCardView(s: s)
+
+                                        .padding(.horizontal)
+                                        .padding(.bottom, 8)
+
+                                        .onTapGesture {
+                                            idSelection = s.id
+                                        }
+
+
+                            }
+
+                            }
+                        }
+                        
+                        // championship and championship points
+                        else if championshipSelected == true && championshipPointsSelected >= 1 {
+                            
+                            if s.teamChampionship == true && Float(s.championshipPoints) ?? 0 >= championshipPointsSelected {
+
+                                if idSelection == s.id {
+
+                                    // View for expanded card
+
+                                    ExpandedCardView(s: s)
+
+                                        .padding(.horizontal)
+                                        .padding(.bottom, 8)
+
+                                }
+
+
+                                else {
+
+                                    // View for collapsed card
+
+                                    CollapsedCardView(s: s)
+
+                                        .padding(.horizontal)
+                                        .padding(.bottom, 8)
+
+                                        .onTapGesture {
+                                            idSelection = s.id
+                                        }
+
+
+                            }
+
+                            }
+                            
+                        }
+                        
+                        // No filter applied
+                        else {
                             if idSelection == s.id {
                                 
                                 // View for expanded card
@@ -147,9 +257,7 @@ struct ContentView: View {
                                 
                             
                         }
-                        
-                      
-                            
+                        }
                         
                     }
                     
