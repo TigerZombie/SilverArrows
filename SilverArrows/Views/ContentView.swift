@@ -20,6 +20,8 @@ struct ContentView: View {
     @State private var championshipSelected: Bool = false
     @State private var championshipPointsSelected: Float = 0
     
+    @State private var championshipPointsForSlider: Int = 100
+    
     var body: some View {
         
         ZStack {
@@ -40,6 +42,10 @@ struct ContentView: View {
                         .scaledToFit()
                         .frame(width: logoWidth)
                         .padding(.bottom, 16)
+                    // When view appears, calculate max championship points (will be used in the slider in the search pane)
+                        .onAppear {
+                            detectMaxPoints()
+                        }
                     
                     // Search bar
                                         ZStack {
@@ -80,7 +86,7 @@ struct ContentView: View {
                                             VStack (alignment: .center){
                                                 Text("Minimum championship points:  \(Int(championshipPointsSelected))")
                                                     
-                                            Slider(value: $championshipPointsSelected, in: 0...765, step: 1)
+                                                Slider(value: $championshipPointsSelected, in: 0...Float(championshipPointsForSlider), step: 1)
                                                     .tint(CustomColors.cardShadow)
                                                     .padding(5)
                                                     .background(Capsule().fill(CustomColors.cardBackground))
@@ -166,7 +172,22 @@ struct ContentView: View {
     //    }
     
     
+    // loop over all seasons to determine maximum championship points
+    func detectMaxPoints() {
+        for season in F1season.seasons {
+            if Int(season.championshipPoints) ?? 0 > championshipPointsForSlider {
+                championshipPointsForSlider = Int(season.championshipPoints) ?? 100
+            }
+            else {
+                championshipPointsForSlider = championshipPointsForSlider
+            }
+        }
+    }
+    
 }
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
